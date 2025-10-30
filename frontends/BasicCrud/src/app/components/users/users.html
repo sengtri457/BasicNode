@@ -1,0 +1,41 @@
+<p>users works!</p>
+<form (submit)="addUser(); $event.preventDefault()">
+  <input
+    type="text"
+    [(ngModel)]="userItem.userName"
+    name="userName"
+    placeholder="userName"
+    required
+  />
+  <input
+    type="text"
+    [(ngModel)]="userItem.email"
+    name="email"
+    placeholder="email"
+    required
+  />
+  <input
+    type="text"
+    [(ngModel)]="userItem.password"
+    name="password"
+    placeholder="password"
+    required
+  />
+  <input
+    type="text"
+    [(ngModel)]="userItem.address"
+    name="address"
+    placeholder="address"
+    required
+  />
+  <button type="submit" style="font-size: 1.2rem; padding: 0.3rem 0.5rem">
+    Add Users
+  </button>
+</form>
+
+@for (item of userlist; track $index){
+<p>{{item.userName}}</p>
+<p>{{item.email}}</p>
+<p>{{item.password}}</p>
+<p>{{item.address}}</p>
+}
